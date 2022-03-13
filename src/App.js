@@ -72,12 +72,12 @@ function App(props) {
                       <li id={count} key={count}>
                         <a href="#">
                           <div className='tile__list-items__logo'>
-                            <img src={'https://www.kayak.com' + logoURL}/>
+                            <img src={'https://www.kayak.com' + logoURL} alt="Logo"/>
                           </div>
                           <div className='tile__list-items__details'>
                             <p className='airline-name'>{name}</p>
                             <div className='hidden-info'>
-                              <p>{alliance == 'SA' ? 'Star Alliance' : alliance == 'OW' ? 'One World' : alliance == 'ST' ? 'Sky Team' : ''}</p>
+                              <p>{alliance === 'SA' ? 'Star Alliance' : alliance === 'OW' ? 'One World' : alliance === 'ST' ? 'Sky Team' : ''}</p>
                               <p>{phone}</p>
                               <p className='web-link'>{site}</p>
                             </div>
@@ -86,19 +86,19 @@ function App(props) {
                       </li>
                     )  
                   }) :
-                  items.filter(elem => elem.alliance == alliance).map(elem => {
+                  items.filter(elem => elem.alliance === alliance).map(elem => {
                     const {name, phone, site, logoURL, alliance} = elem;
                     count++;
                     return(
                       <li id={count} key={count}>
                         <a href="#">
                           <div className='tile__list-items__logo'>
-                            <img src={'https://www.kayak.com' + logoURL}/>
+                            <img src={'https://www.kayak.com' + logoURL} alt="Logo"/>
                           </div>
                           <div className='tile__list-items__details'>
                             <p className='airline-name'>{name}</p>
                             <div className='hidden-info'>
-                              <p>{alliance == 'SA' ? 'Star Alliance' : alliance == 'OW' ? 'One World' : alliance == 'ST' ? 'Sky Team' : ''}</p>
+                              <p>{alliance === 'SA' ? 'Star Alliance' : alliance === 'OW' ? 'One World' : alliance === 'ST' ? 'Sky Team' : ''}</p>
                               <p>{phone}</p>
                               <p className='web-link'>{site}</p>
                             </div>
@@ -112,7 +112,7 @@ function App(props) {
             </div>
             {/* Airline Itemlist END */}
             <div className='text-center'>
-              {expand == true ? '' :
+              {expand === true ? '' :
                 <button className='show-more' onClick={() => setExpand(true)}>Show more</button>
               }
             </div>
