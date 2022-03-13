@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'HelveticaNeue';
-    src: local('HelveticaNeue'), url('fonts/HelveticaNeueMed.ttf') format('truetype');
+    src: local('HelveticaNeue'), url('../public/fonts/HelveticaNeueMed.ttf') format('truetype');
 }
 @font-face {
     font-family: 'HelveticaNeueBold';
-    src: local('HelveticaNeueBold'), url('fonts/HelveticaNeuBold.ttf') format('truetype');
+    src: local('HelveticaNeueBold'), url('../public/fonts/HelveticaNeuBold.ttf') format('truetype');
 }
 body{
     font-size: 16px;
