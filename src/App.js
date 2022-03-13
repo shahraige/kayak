@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.scss';
+import Header from './components/Header/Header';
 
 function App(props) {
   let count = 0;
@@ -17,26 +18,23 @@ function App(props) {
         const footer_refactor = header_refactor.replace(');','');
         const ItemsData = JSON.parse(footer_refactor);
         setItems(ItemsData)
-        //console.log(items);
       })
       .catch((error) => console.log('error', error));
   }, [])
 
-  console.log(items);
-  //console.log(alliance);
-
-  
-
   return (
     <div className="App">
-      <header className="header">
-        <img className="header__logo" src="Logo.svg" alt="Logo"/>
-      </header>
+
+      {/* Header START */}
+      <Header/>
+      {/* Header END */}
 
       <main>
         <div className='tile'>
           <div className='tile__wrapper'>
             <h1 className='tile__title'>Airline</h1>
+
+            {/* Filter START */}
             <div className='tile__filter'>
               <p><strong>Filter by Alliances</strong></p>
 
@@ -61,6 +59,9 @@ function App(props) {
                 </div>
               </div>
             </div>
+            {/* Filter END */}
+
+            {/* Airline Itemlist START */}
             <div className={`tile__body ${expand == false ? 'toggle-expand' : ''}`}>
               <ul className='tile__list-items'>
                 {alliance == '' ?
@@ -109,6 +110,7 @@ function App(props) {
                 }
               </ul>
             </div>
+            {/* Airline Itemlist END */}
             <div className='text-center'>
               {expand == true ? '' :
                 <button className='show-more' onClick={() => setExpand(true)}>Show more</button>
